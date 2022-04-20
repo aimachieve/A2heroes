@@ -24,20 +24,16 @@ contract A2Heroes is ERC721, ERC721Enumerable, ERC721Burnable, AccessControl, Ow
   event TokenMinted(uint256 indexed tokenId, bytes mintedData);
   event RoyaltySent(bytes sentData);
 
-  constructor(
-    string memory name ,
-    string memory symbol,
-    string memory newCreator,
-    address fullAdmin ) ERC721(name, symbol) {
-    creator = newCreator;
-    currentAdmin = fullAdmin;
-    _setupRole(DEFAULT_ADMIN_ROLE, fullAdmin);
-    _setupRole(REDEEM_ROLE, fullAdmin);
-    _setupRole(BURI_ROLE, fullAdmin);
-    _setupRole(PRESALE_ROLE, fullAdmin);
+  constructor() ERC721("A2Heroes", "A2H") {
+    creator = "A2Heroes" ;
+    currentAdmin = 0x2dC900A489DA7d5Eb5E1eAc7F6B9f9246f4dD16d;
+    _setupRole(DEFAULT_ADMIN_ROLE, 0x2dC900A489DA7d5Eb5E1eAc7F6B9f9246f4dD16d);
+    _setupRole(REDEEM_ROLE, 0x2dC900A489DA7d5Eb5E1eAc7F6B9f9246f4dD16d);
+    _setupRole(BURI_ROLE, 0x2dC900A489DA7d5Eb5E1eAc7F6B9f9246f4dD16d);
+    _setupRole(PRESALE_ROLE, 0x2dC900A489DA7d5Eb5E1eAc7F6B9f9246f4dD16d);
     baseuri = 'https://gateway.pinata.cloud/ipfs';
     royaltyRate = 10;
-    royaltyAddress = fullAdmin;
+    royaltyAddress = 0x2dC900A489DA7d5Eb5E1eAc7F6B9f9246f4dD16d;
   }
 
   address public currentAdmin;

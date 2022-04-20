@@ -11,7 +11,7 @@ async function main() {
     /////////////////////////////////////////////////////////////////////////
   
     const TOKENFACTORY = await ethers.getContractFactory('A2Heroes');
-    const tokenFactory = await TOKENFACTORY.deploy('A2Heroes', 'A2H', 'A2Heroes', '0x2dC900A489DA7d5Eb5E1eAc7F6B9f9246f4dD16d');
+    const tokenFactory = await TOKENFACTORY.deploy();
     // const tokenFactory = await TOKENFACTORY.deploy('A2HeroesTest', 'A2HT', 'A2Heroes', '0x42cCf0f32453547dACB0e36bf5dBcC03Fd234ea5');
     await tokenFactory.deployed();
     const tokenFactoryAddress = tokenFactory.address
