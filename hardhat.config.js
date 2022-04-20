@@ -8,8 +8,8 @@ require('@nomiclabs/hardhat-solhint');
 require('hardhat-contract-sizer');
 require('@openzeppelin/hardhat-upgrades');
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
-// const PRIVATE_KEY = '04c11c6d36cb28e8e7516c29303418a45442434547527890ff6f0cedfef2616c';
+// const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const PRIVATE_KEY = '04c11c6d36cb28e8e7516c29303418a45442434547527890ff6f0cedfef2616c';
 
 module.exports = {
   solidity: {
@@ -32,36 +32,14 @@ module.exports = {
       chainId: 1,
       accounts: [`0x${PRIVATE_KEY}`]
     },
-    testnet: {
-      url: `https://rpcapi-tracing.testnet.Centralworld.network`,
-      chainId: 4002,
-      accounts: [`0x${PRIVATE_KEY}`]
-    },
     rinkeby: {
-      url: `https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161`,
+      url: `https://eth-rinkeby.alchemyapi.io/v2/7d-4Hdslo39B0ajTKijGkr8OhOjCpcES/`,
       chainId: 4,
       accounts: [`0x${PRIVATE_KEY}`],
-    },
-    ropsten: {
-      url: `https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161`,
-      chainId: 3,
-      accounts: [`0x${PRIVATE_KEY}`],
-    },
-    bsctest: {
-      url: `https://data-seed-prebsc-1-s1.binance.org:8545`,
-      chainId: 97,
-      accounts: [`0x${PRIVATE_KEY}`],
-    },
-    coverage: {
-      url: 'http://localhost:8555',
-    },
-    
-    localhost: {
-      url: `http://127.0.0.1:8545`
-    },
+    }
   },
   etherscan: {
-    apiKey: 'MA6FM1QJTBA23GZNNVNT98NEK25KFSF3Z6'
+    apiKey: 'HAXJV6DBVG6PUWTZGGTR74GJYXMER1F1HJ'
   },
   ///////// when deploy and verify on bsc network ////////////
   // etherscan: {
